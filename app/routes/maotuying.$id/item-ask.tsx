@@ -39,10 +39,12 @@ export const ItemAsk = ({
           alignItems={"center"}
           spacing={1}
           sx={{ pt: [2, 0] }}
+          display={["none", "flex"]}
         >
           <IconButton sx={{ color: "#333", border: "1px solid #333" }}>
             <IosShareOutlinedIcon />
           </IconButton>
+
           <IconButton sx={{ color: "#333" }}>
             <FavoriteBorderOutlinedIcon />
           </IconButton>
