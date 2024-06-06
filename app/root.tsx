@@ -1,3 +1,14 @@
+import "@fontsource/montserrat/300.css";
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/500.css";
+import "@fontsource/montserrat/600.css";
+import "@fontsource/montserrat/700.css";
+
+import {
+  CssBaseline,
+  Experimental_CssVarsProvider,
+  getInitColorSchemeScript,
+} from "@mui/material";
 import {
   Links,
   Meta,
@@ -6,17 +17,27 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import { theme } from "./theme";
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no"
+        />
         <Meta />
         <Links />
       </head>
-      <body>
-        {children}
+      <body suppressHydrationWarning={true}>
+        <Experimental_CssVarsProvider theme={theme}>
+          {getInitColorSchemeScript()}
+          <CssBaseline />
+          {children}
+        </Experimental_CssVarsProvider>
+
         <ScrollRestoration />
         <Scripts />
       </body>
