@@ -1,8 +1,5 @@
-import "@fontsource/montserrat/300.css";
 import "@fontsource/montserrat/400.css";
-import "@fontsource/montserrat/500.css";
 import "@fontsource/montserrat/600.css";
-import "@fontsource/montserrat/700.css";
 
 import {
   CssBaseline,
@@ -21,7 +18,11 @@ import { theme } from "./theme";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html
+      lang="en"
+      suppressHydrationWarning={true}
+      // data-mui-color-scheme="light"
+    >
       <head>
         <meta charSet="utf-8" />
         <meta
@@ -32,7 +33,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body suppressHydrationWarning={true}>
-        <Experimental_CssVarsProvider theme={theme}>
+        <Experimental_CssVarsProvider
+          theme={theme}
+          defaultColorScheme={"dark"}
+          defaultMode={"dark"}
+        >
           {getInitColorSchemeScript()}
           <CssBaseline />
           {children}

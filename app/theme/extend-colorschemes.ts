@@ -5,7 +5,6 @@ export const color_schemes: CssVarsThemeOptions["colorSchemes"] = {
     palette: {
       primary: {
         main: "rgb(41, 112, 255)",
-        mainChannel: "41 112 255",
       },
     },
   },
