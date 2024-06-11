@@ -8,7 +8,7 @@ import {
   Unstable_Grid2,
 } from "@mui/material";
 import { ActionFunctionArgs, json, LoaderFunctionArgs } from "@remix-run/node";
-import { Form, useActionData, useLoaderData } from "@remix-run/react";
+import { Form, Link, useActionData, useLoaderData } from "@remix-run/react";
 import { prisma } from "prisma/prisma.server";
 
 export default function Component() {
@@ -16,7 +16,11 @@ export default function Component() {
   const actiondata = useActionData<typeof action>();
   return (
     <Unstable_Grid2 container spacing={12}>
-      <Unstable_Grid2 xs={12}></Unstable_Grid2>
+      <Unstable_Grid2 xs={12}>
+        <Button component={Link} variant="contained" to={"/admin"}>
+          返回
+        </Button>
+      </Unstable_Grid2>
       <Unstable_Grid2 xs={12}>
         <Form method="POST">
           <Stack spacing={2}>

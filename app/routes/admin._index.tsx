@@ -34,7 +34,14 @@ export default function Component() {
                 >
                   编辑
                 </Button>
-                <Button color="inherit">预览</Button>
+                <Button
+                  component={Link}
+                  to={`/mty/${item.id}`}
+                  target="_blank"
+                  color="inherit"
+                >
+                  预览
+                </Button>
               </CardActions>
             </Card>
           </Unstable_Grid2>

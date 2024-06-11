@@ -1,5 +1,5 @@
-import "@fontsource/montserrat/400.css";
-import "@fontsource/montserrat/600.css";
+import "@fontsource/montserrat/500.css";
+import "@fontsource/montserrat/700.css";
 
 import {
   CssBaseline,
@@ -18,11 +18,7 @@ import { theme } from "./theme";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning={true}
-      // data-mui-color-scheme="light"
-    >
+    <html lang="en" suppressHydrationWarning={true}>
       <head>
         <meta charSet="utf-8" />
         <meta
