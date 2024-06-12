@@ -7,5 +7,6 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     where: { id: ask_id },
     include: { Comment: true },
   });
+
   return json({ ask_obj });
 };

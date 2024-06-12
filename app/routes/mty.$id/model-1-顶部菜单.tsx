@@ -12,7 +12,7 @@ export const Model顶部菜单 = () => {
   return (
     <AppBar variant="outlined" color="inherit" position="static">
       <Toolbar>
-        <Container>
+        <Container sx={{ px: [0, 0, 0, 3] }} disableGutters>
           <Stack
             alignItems={"center"}
             direction={"row"}
@@ -41,7 +41,11 @@ const Logo = () => {
 const HeaderMenu = () => {
   const header_menu_list = ["Discover", "Trips", "Review"];
   return (
-    <Stack direction={"row"} spacing={1}>
+    <Stack
+      direction={"row"}
+      sx={{ display: ["none", "none", "flex"] }}
+      spacing={1}
+    >
       {header_menu_list.map((item) => (
         <Button sx={sx} key={item}>
           {item}
@@ -58,6 +62,7 @@ const HeaderRightMenu = () => {
       backgroundColor: "#000",
       color: "#fff",
       ":hover": { backgroundColor: "#000" },
+      display: ["none", "block"],
     },
   };
   return (

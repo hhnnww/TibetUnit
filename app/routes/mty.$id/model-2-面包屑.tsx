@@ -8,7 +8,7 @@ export const Model面包屑 = (props: { title: string }) => {
     <Link
       sx={{
         cursor: "pointer",
-        fontWeight: 600,
+        fontWeight: 500,
         textTransform: "capitalize",
         fontSize: 13,
         color: "#000",
