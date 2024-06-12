@@ -3,7 +3,8 @@ import { prisma } from "prisma/prisma.server";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const ask_id = parseInt(params.id as string);
-  const ask_obj = await prisma.ask.findUnique({
+
+  const ask_obj = await prisma.ask.findFirst({
     where: { id: ask_id },
     include: { Comment: true },
   });

@@ -1,4 +1,5 @@
 import { Container, Divider, Unstable_Grid2 } from "@mui/material";
+import { ItemUser } from "./item-user";
 
 type propsType = {
   id: number;
@@ -16,7 +17,7 @@ export const Model_回答模块 = (props: propsType) => {
       <Container sx={{ mt: 5 }}>
         <Divider sx={{ mb: 5 }} />
         <Unstable_Grid2 container spacing={2}>
-          <Unstable_Grid2 xs={12}>{JSON.stringify(props)}</Unstable_Grid2>
+          <ItemUser {...props} />
           <Unstable_Grid2 xs={12}>{props.content}</Unstable_Grid2>
         </Unstable_Grid2>
       </Container>

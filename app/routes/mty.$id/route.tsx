@@ -11,11 +11,10 @@ import { Model_底部模块 } from "./model-5-底部模块";
 export { action, loader };
 
 export default function Component() {
-  const { mode, setMode } = useColorScheme();
-  if (mode === "dark") {
-    setMode("light");
-  }
+  const { setMode } = useColorScheme();
+  setMode("light");
   const { ask_obj } = useLoaderData<typeof loader>();
+
   return (
     <>
       <Model顶部菜单 />
@@ -23,7 +22,16 @@ export default function Component() {
       {ask_obj && (
         <>
           <Model面包屑 title={ask_obj.title} />
-          <Model问题模块 title={ask_obj.title} content={ask_obj.content} />
+          <Model问题模块
+            title={ask_obj.title}
+            content={ask_obj.content}
+            id={ask_obj.id}
+            address={ask_obj.address}
+            avatar={ask_obj.avatar}
+            name={ask_obj.name}
+            publish_date={ask_obj.publish_date}
+            star={ask_obj.star}
+          />
         </>
       )}
 
