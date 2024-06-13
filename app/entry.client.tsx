@@ -24,6 +24,8 @@ interface ClientCacheProviderProps {
 function ClientCacheProvider({ children }: ClientCacheProviderProps) {
   const [cache, setCache] = useState(createEmotionCache());
 
+  localStorage.clear();
+
   const reset = useCallback(() => {
     setCache(createEmotionCache());
   }, []);
