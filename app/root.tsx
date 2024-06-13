@@ -29,7 +29,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body suppressHydrationWarning={true}>
-        <Experimental_CssVarsProvider theme={theme}>
+        <Experimental_CssVarsProvider
+          theme={theme}
+          defaultColorScheme={"light"}
+          defaultMode={"light"}
+        >
           {getInitColorSchemeScript()}
           <CssBaseline />
           {children}

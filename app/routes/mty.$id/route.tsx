@@ -1,4 +1,4 @@
-import { Container, Stack, useColorScheme } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import { MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { action } from "./action";
@@ -11,8 +11,6 @@ import { Model_底部模块 } from "./model-5-底部模块";
 export { action, loader };
 
 export default function Component() {
-  const { setMode } = useColorScheme();
-  setMode("light");
   const { ask_obj, comments_obj } = useLoaderData<typeof loader>();
 
   return (

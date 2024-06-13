@@ -1,13 +1,9 @@
-import { Container, useColorScheme } from "@mui/material";
+import { Container } from "@mui/material";
 import { LoaderFunctionArgs, redirect } from "@remix-run/node";
 import { Outlet } from "@remix-run/react";
 import { getSession } from "~/session";
 
 export default function Component() {
-  const { mode, setMode } = useColorScheme();
-  if (mode === "light") {
-    setMode("dark");
-  }
   return (
     <Container sx={{ my: 20 }}>
       <Outlet />
