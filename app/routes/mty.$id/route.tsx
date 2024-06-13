@@ -1,11 +1,11 @@
-import { useColorScheme } from "@mui/material";
+import { Container, Stack, useColorScheme } from "@mui/material";
 import { MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { action } from "./action";
 import { loader } from "./loader";
-import { Model顶部菜单 } from "./model-1-顶部菜单";
-import { Model面包屑 } from "./model-2-面包屑";
-import { Model问题模块 } from "./model-3-问题模块";
+import { Model_顶部菜单 } from "./model-1-顶部菜单";
+import { Model_面包屑 } from "./model-2-面包屑";
+import { Model_问题模块 } from "./model-3-问题模块";
 import { Model_回答模块 } from "./model-4-回答模块";
 import { Model_底部模块 } from "./model-5-底部模块";
 export { action, loader };
@@ -13,35 +13,38 @@ export { action, loader };
 export default function Component() {
   const { setMode } = useColorScheme();
   setMode("light");
-  const { ask_obj } = useLoaderData<typeof loader>();
+  const { ask_obj, comments_obj } = useLoaderData<typeof loader>();
 
   return (
     <>
-      <Model顶部菜单 />
+      <Model_顶部菜单 />
 
-      {ask_obj && (
-        <>
-          <Model面包屑 title={ask_obj.title} />
-          <Model问题模块
-            title={ask_obj.title}
-            content={ask_obj.content}
-            id={ask_obj.id}
-            address={ask_obj.address}
-            avatar={ask_obj.avatar}
-            name={ask_obj.name}
-            publish_date={ask_obj.publish_date}
-            star={ask_obj.star}
-          />
-        </>
-      )}
+      <Container>
+        <Stack spacing={4} py={4}>
+          {ask_obj && (
+            <>
+              <Model_面包屑 title={ask_obj.title} />
+              <Model_问题模块
+                title={ask_obj.title}
+                content={ask_obj.content}
+                id={ask_obj.id}
+                address={ask_obj.address}
+                avatar={ask_obj.avatar}
+                name={ask_obj.name}
+                publish_date={ask_obj.publish_date}
+              />
+            </>
+          )}
 
-      {ask_obj?.Comment && (
-        <>
-          {ask_obj.Comment.map((item) => (
-            <Model_回答模块 {...item} key={item.id} />
-          ))}
-        </>
-      )}
+          {comments_obj && (
+            <>
+              {comments_obj.map((item) => (
+                <Model_回答模块 {...item} key={item.id} />
+              ))}
+            </>
+          )}
+        </Stack>
+      </Container>
 
       <Model_底部模块 />
     </>

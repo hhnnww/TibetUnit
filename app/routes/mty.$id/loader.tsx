@@ -6,8 +6,13 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
   const ask_obj = await prisma.ask.findFirst({
     where: { id: ask_id },
-    include: { Comment: true },
   });
 
-  return json({ ask_obj });
+  const comments_obj = await prisma.comment.findMany({
+    where: {
+      askId: ask_id,
+    },
+  });
+
+  return json({ ask_obj, comments_obj });
 };

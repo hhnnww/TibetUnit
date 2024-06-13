@@ -1,44 +1,31 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 model Ask {
-  id Int @id @default(autoincrement())
-
-  title String @default("")
-
-  content      String @default("")
-  name         String @default("")
-  avatar       String @default("")
-  star         String @default("")
-  publish_date String @default("")
-  address      String @default("")
-
-  Comment Comment[]
+  id           Int       @id @default(autoincrement())
+  title        String    @default("")
+  content      String    @default("")
+  name         String    @default("")
+  avatar       String    @default("")
+  publish_date String    @default("")
+  address      String    @default("")
+  Comment      Comment[]
 }
 
 model Comment {
-  id Int @id @default(autoincrement())
-
+  id           Int    @id @default(autoincrement())
   content      String @default("")
   name         String @default("")
   avatar       String @default("")
-  star         String @default("")
   publish_date String @default("")
+  askId        Int
   address      String @default("")
-
-  ask   Ask @relation(fields: [askId], references: [id])
-  askId Int
+  ask          Ask    @relation(fields: [askId], references: [id])
 }

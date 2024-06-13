@@ -12,8 +12,14 @@ export const ItemUser = (props: {
       <Unstable_Grid2 xs={12}>
         <Stack direction={"row"} alignItems={"center"} spacing={2}>
           <Avatar src={props.avatar} />
-          <Stack>
-            <Typography sx={{ fontWeight: 600, fontSize: 18, lineHeight: 1 }}>
+          <Stack sx={{ "& p": { lineHeight: 1 } }} spacing={0.5}>
+            <Typography
+              sx={{
+                fontWeight: 600,
+                fontSize: 18,
+                textTransform: "capitalize",
+              }}
+            >
               {props.name}
             </Typography>
 

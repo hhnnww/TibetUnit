@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { sx } from "./item-button-sx";
 
-export const Model顶部菜单 = () => {
+export const Model_顶部菜单 = () => {
   return (
     <AppBar variant="outlined" color="inherit" position="static">
       <Toolbar>
