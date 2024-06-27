@@ -19,7 +19,9 @@ export const Model_回答模块 = (props: propsType) => {
         <ItemUser {...props} />
         <Unstable_Grid2 xs={12}>
           <Box sx={{ img: { maxWidth: "100%" } }}>
-            <Markdown>{props.content}</Markdown>
+            <Markdown allowedElements={["p", "br", "img"]}>
+              {props.content}
+            </Markdown>
           </Box>
         </Unstable_Grid2>
       </Unstable_Grid2>
