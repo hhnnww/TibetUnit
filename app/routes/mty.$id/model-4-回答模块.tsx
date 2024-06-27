@@ -1,4 +1,4 @@
-import { Divider, Unstable_Grid2 } from "@mui/material";
+import { Box, Divider, Unstable_Grid2 } from "@mui/material";
 import Markdown from "react-markdown";
 import { ItemUser } from "./item-user";
 type propsType = {
@@ -18,7 +18,9 @@ export const Model_回答模块 = (props: propsType) => {
       <Unstable_Grid2 container rowSpacing={2}>
         <ItemUser {...props} />
         <Unstable_Grid2 xs={12}>
-          <Markdown>{props.content}</Markdown>
+          <Box sx={{ img: { maxWidth: "100%" } }}>
+            <Markdown>{props.content}</Markdown>
+          </Box>
         </Unstable_Grid2>
       </Unstable_Grid2>
     </>

@@ -12,6 +12,9 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     where: {
       askId: ask_id,
     },
+    orderBy: {
+      id: "asc",
+    },
   });
 
   return json({ ask_obj, comments_obj });
