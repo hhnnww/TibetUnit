@@ -16,7 +16,9 @@ export const Model_问题模块 = (props: propsType) => {
   return (
     <Unstable_Grid2 container rowSpacing={4}>
       <Unstable_Grid2 xs={12}>
-        <Typography variant="h1">{props.title}</Typography>
+        <Typography variant="h1" sx={{ lineHeight: 1.6 }}>
+          {props.title}
+        </Typography>
       </Unstable_Grid2>
 
       <ItemUser

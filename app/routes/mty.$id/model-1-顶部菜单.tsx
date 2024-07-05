@@ -10,7 +10,7 @@ import { sx } from "./item-button-sx";
 
 export const Model_顶部菜单 = () => {
   return (
-    <AppBar variant="outlined" color="inherit" position="static">
+    <AppBar variant="outlined" color="inherit" position="static" elevation={0}>
       <Toolbar>
         <Container sx={{ px: [0, 0, 0, 3] }} disableGutters>
           <Stack

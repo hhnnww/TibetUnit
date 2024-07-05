@@ -12,7 +12,13 @@ export { action, loader };
 
 export default function Component() {
   const { ask_obj, comments_obj } = useLoaderData<typeof loader>();
-
+  const saler = {
+    name: "Gloria",
+    erweima:
+      "https://www.journey2tibet.com/wp-content/uploads/2024/07/01e715da4a776fd.jpg",
+    whatapp: "+86 19980572645",
+    email: " changhaowang911@gmail.com ",
+  };
   return (
     <>
       <Model_顶部菜单 />
@@ -37,7 +43,12 @@ export default function Component() {
           {comments_obj && (
             <>
               {comments_obj.map((item) => (
-                <Model_回答模块 {...item} key={item.id} />
+                <Model_回答模块
+                  {...item}
+                  saler={saler.name}
+                  whatapp={saler.whatapp}
+                  key={item.id}
+                />
               ))}
             </>
           )}
