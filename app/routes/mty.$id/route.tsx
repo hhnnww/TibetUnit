@@ -8,6 +8,7 @@ import { Model_面包屑 } from "./model-2-面包屑";
 import { Model_问题模块 } from "./model-3-问题模块";
 import { Model_回答模块 } from "./model-4-回答模块";
 import { Model_底部模块 } from "./model-5-底部模块";
+import { Model_按钮模块 } from "./model-6-按钮模块";
 export { action, loader };
 
 export default function Component() {
@@ -56,6 +57,8 @@ export default function Component() {
       </Container>
 
       <Model_底部模块 />
+
+      <Model_按钮模块 name={saler.name} whatapp={saler.whatapp} />
     </>
   );
 }
