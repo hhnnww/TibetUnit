@@ -45,7 +45,7 @@ export const Model_按钮模块 = (props: propsType) => {
           }}
           onClick={handleOpen}
         >
-          add Jorney2Tibet {props.name}'s whatapp
+          add Jorney2Tibet {props.name}'s WhatsApp
         </Button>
       </Container>
       <Modal open={open} onClose={handleClose}>
@@ -90,7 +90,7 @@ export const Model_按钮模块 = (props: propsType) => {
                 {props.whatapp}
               </Button>
               <Typography variant="body2">
-                click to copy {props.name} whatapp account
+                click to copy {props.name} WhatsApp account
               </Typography>
             </Stack>
           </Stack>
