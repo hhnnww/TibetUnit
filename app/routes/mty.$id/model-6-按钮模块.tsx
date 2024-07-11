@@ -48,6 +48,8 @@ export const Model_按钮模块 = (props: propsType) => {
           add Jorney2Tibet {props.name}'s WhatsApp
         </Button>
       </Container>
+
+      {/* 弹出模块 */}
       <Modal open={open} onClose={handleClose}>
         <Box
           sx={{
@@ -72,7 +74,7 @@ export const Model_按钮模块 = (props: propsType) => {
             <img src="/erweima.jpg" />
             <Stack direction={"column"} spacing={1}>
               {copyed && (
-                <Alert severity="success">
+                <Alert severity="success" sx={{ textAlign: "left" }}>
                   WhatsApp account copied successfully. Open WhatsApp and get in
                   touch with Gloria.
                 </Alert>
