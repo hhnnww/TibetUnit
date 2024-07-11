@@ -18,6 +18,7 @@ export default function Component() {
     erweima:
       "https://www.journey2tibet.com/wp-content/uploads/2024/07/01e715da4a776fd.jpg",
     whatapp: "+86 19980572645",
+    whatapp_last: "19980572645",
     email: " changhaowang911@gmail.com ",
   };
   return (
@@ -58,7 +59,11 @@ export default function Component() {
 
       <Model_底部模块 />
 
-      <Model_按钮模块 name={saler.name} whatapp={saler.whatapp} />
+      <Model_按钮模块
+        name={saler.name}
+        whatapp={saler.whatapp}
+        whatapp_last={saler.whatapp_last}
+      />
     </>
   );
 }

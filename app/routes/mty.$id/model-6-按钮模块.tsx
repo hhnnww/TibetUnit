@@ -1,5 +1,6 @@
 import TouchAppIcon from "@mui/icons-material/TouchApp";
 import {
+  Alert,
   Box,
   Button,
   Container,
@@ -7,14 +8,19 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import copy from "copy-to-clipboard";
 import { useState } from "react";
 
-type propsType = { name: string; whatapp: string };
+type propsType = { name: string; whatapp: string; whatapp_last: string };
 
 export const Model_按钮模块 = (props: propsType) => {
   const [open, setOpen] = useState(false);
+  const [copyed, setCopyed] = useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    setCopyed(false);
+  };
 
   return (
     <>
@@ -32,7 +38,7 @@ export const Model_按钮模块 = (props: propsType) => {
           variant="contained"
           sx={{
             // borderRadius: 0,
-            py: 2,
+            // py: 1,
             textTransform: "none",
             fontSize: "1.3rem",
             fontWeight: "normal",
@@ -54,6 +60,7 @@ export const Model_按钮模块 = (props: propsType) => {
             p: 4,
             borderRadius: 1,
             width: "500px",
+            maxWidth: "80%",
             "& img": {
               width: "100%",
               borderRadius: 1,
@@ -64,11 +71,21 @@ export const Model_按钮模块 = (props: propsType) => {
           <Stack spacing={3} direction={"column"}>
             <img src="/erweima.jpg" />
             <Stack direction={"column"} spacing={1}>
+              {copyed && (
+                <Alert severity="success">
+                  WhatsApp account copied successfully. Open WhatsApp and get in
+                  touch with Gloria.
+                </Alert>
+              )}
               <Button
                 size="large"
                 startIcon={<TouchAppIcon />}
                 variant="contained"
                 sx={{ fontSize: "1.2rem", fontWeight: "normal" }}
+                onClick={() => {
+                  copy(props.whatapp_last);
+                  setCopyed(true);
+                }}
               >
                 {props.whatapp}
               </Button>
