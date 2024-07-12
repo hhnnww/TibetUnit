@@ -25,7 +25,7 @@ export default function Component() {
     <>
       <Model_顶部菜单 />
 
-      <Container>
+      <Container maxWidth="md">
         <Stack spacing={4} py={4}>
           {ask_obj && (
             <>

@@ -2,12 +2,7 @@ import { type CssVarsThemeOptions } from "@mui/material";
 
 export const components: CssVarsThemeOptions["components"] = {
   MuiCssBaseline: {
-    styleOverrides: {
-      body: {
-        FontFamily: ["Montserrat", "sans-serif"].join(","),
-        fontWeight: 400,
-      },
-    },
+    styleOverrides: {},
   },
 
   MuiCardHeader: {

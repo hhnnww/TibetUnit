@@ -32,6 +32,7 @@ export const Model_按钮模块 = (props: propsType) => {
           left: "50%",
           transform: "translate(-50%,-50%)",
         }}
+        maxWidth="md"
       >
         <Button
           fullWidth
