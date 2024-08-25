@@ -1,4 +1,4 @@
-import TouchAppIcon from "@mui/icons-material/TouchApp";
+import EmailIcon from "@mui/icons-material/Email";
 import {
   Alert,
   Box,
@@ -8,10 +8,14 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import copy from "copy-to-clipboard";
 import { useState } from "react";
 
-type propsType = { name: string; whatapp: string; whatapp_last: string };
+type propsType = {
+  name: string;
+  whatapp: string;
+  whatapp_last: string;
+  email: string;
+};
 
 export const Model_按钮模块 = (props: propsType) => {
   const [open, setOpen] = useState(false);
@@ -82,18 +86,23 @@ export const Model_按钮模块 = (props: propsType) => {
               )}
               <Button
                 size="large"
-                startIcon={<TouchAppIcon />}
+                startIcon={<EmailIcon />}
                 variant="contained"
-                sx={{ fontSize: "1.2rem", fontWeight: "normal" }}
-                onClick={() => {
-                  copy(props.whatapp_last);
-                  setCopyed(true);
+                sx={{
+                  fontSize: "1.2rem",
+                  fontWeight: "normal",
+                  textTransform: "lowercase",
                 }}
+                // onClick={() => {
+                //   copy(props.whatapp_last);
+                //   setCopyed(true);
+                // }}
+                href={`mailto://${props.email}`}
               >
-                {props.whatapp}
+                {props.email}
               </Button>
               <Typography variant="body2">
-                click to copy {props.name} WhatsApp account
+                click to mail {props.name}
               </Typography>
             </Stack>
           </Stack>

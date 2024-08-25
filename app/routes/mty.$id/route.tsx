@@ -19,7 +19,7 @@ export default function Component() {
       "https://www.journey2tibet.com/wp-content/uploads/2024/07/01e715da4a776fd.jpg",
     whatapp: "+86 19980572645",
     whatapp_last: "19980572645",
-    email: " changhaowang911@gmail.com ",
+    email: "journey2Tibet@yahoo.com",
   };
   return (
     <>
@@ -63,6 +63,7 @@ export default function Component() {
         name={saler.name}
         whatapp={saler.whatapp}
         whatapp_last={saler.whatapp_last}
+        email={saler.email}
       />
     </>
   );
