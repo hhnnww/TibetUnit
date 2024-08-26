@@ -11,7 +11,7 @@ type propsType = {
   publish_date: string;
   askId: number;
   address: string;
-
+  email: string;
   saler: string;
   whatapp: string;
 };
@@ -19,7 +19,8 @@ type propsType = {
 export const Model_回答模块 = (props: propsType) => {
   const content = props.content
     .replaceAll("${sale}", ` **${props.saler}**`)
-    .replaceAll("${phone}", " **whatapp " + props.whatapp + "**");
+    .replaceAll("${phone}", " **whatapp " + props.whatapp + "**")
+    .replaceAll("${email}", props.email);
   return (
     <>
       <Divider sx={{ mb: 5 }} />

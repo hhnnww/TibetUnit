@@ -49,6 +49,7 @@ export default function Component() {
                   {...item}
                   saler={saler.name}
                   whatapp={saler.whatapp}
+                  email={saler.email}
                   key={item.id}
                 />
               ))}
